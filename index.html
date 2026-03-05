@@ -297,45 +297,54 @@
             line-height: 1.7;
         }
 
-        /* --- EXPERTISE BARS (NEW) --- */
-        .skills-wrapper {
+        /* --- EXPERTISE GRID (3 Columns) --- */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
+            gap: 20px;
+        }
+
+        .expertise-column {
             background: #f9fafb;
             padding: 20px;
             border-radius: 8px;
             border: 1px solid #e5e7eb;
-        }
-
-        .skill-bar-item {
-            margin-bottom: 18px;
-        }
-
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 6px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--secondary-color);
-        }
-
-        .progress-track {
-            width: 100%;
-            height: 8px;
-            background: #e5e7eb;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: 4px;
-            width: 0; /* Animated via CSS */
-            animation: fillProgress 1.5s ease-out forwards;
         }
 
-        @keyframes fillProgress {
-            to { width: var(--w); }
+        .expertise-title {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .expertise-list {
+            list-style: none;
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
+
+        .expertise-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .expertise-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 0.8rem;
+            top: 2px;
         }
 
         /* Experience Styles */
@@ -439,6 +448,7 @@
             .sidebar { padding: 30px 20px; }
             .main-content { padding: 30px 20px; }
             .top-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .expertise-grid { grid-template-columns: 1fr; } /* Stack columns on mobile */
             .job-header { flex-direction: column; }
             .passions-grid { grid-template-columns: 1fr; }
         }
@@ -564,54 +574,40 @@
                 </p>
             </section>
 
-            <!-- Expertise (Moved to Middle with Percentage Bars) -->
+            <!-- Expertise (Detailed Lists in 3 Columns) -->
             <section class="section">
-                <h3 class="section-head"><i class="fas fa-chart-pie"></i> Expertise</h3>
-                <div class="skills-wrapper">
+                <h3 class="section-head"><i class="fas fa-layer-group"></i> Expertise</h3>
+                <div class="expertise-grid">
                     
-                    <!-- Skill 1 -->
-                    <div class="skill-bar-item">
-                        <div class="skill-info">
-                            <span>Photo Editing & Graphics</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="progress-track">
-                            <!-- Use style="--w: 90%" to control width -->
-                            <div class="progress-fill" style="--w: 90%"></div>
-                        </div>
+                    <!-- Column 1 -->
+                    <div class="expertise-column">
+                        <h4 class="expertise-title"><i class="fas fa-camera"></i> Photo & Graphics</h4>
+                        <ul class="expertise-list">
+                            <li>Photo retouching & enhancement</li>
+                            <li>Social media poster design</li>
+                            <li>Thumbnail design</li>
+                            <li>Banner & promotional graphics</li>
+                        </ul>
                     </div>
 
-                    <!-- Skill 2 -->
-                    <div class="skill-bar-item">
-                        <div class="skill-info">
-                            <span>Video Editing</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill" style="--w: 85%"></div>
-                        </div>
+                    <!-- Column 2 -->
+                    <div class="expertise-column">
+                        <h4 class="expertise-title"><i class="fas fa-share-alt"></i> Social Media</h4>
+                        <ul class="expertise-list">
+                            <li>Content planning & scheduling</li>
+                            <li>Facebook & Instagram management</li>
+                            <li>Basic social media marketing</li>
+                        </ul>
                     </div>
 
-                    <!-- Skill 3 -->
-                    <div class="skill-bar-item">
-                        <div class="skill-info">
-                            <span>Social Media Management</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill" style="--w: 80%"></div>
-                        </div>
-                    </div>
-
-                    <!-- Skill 4 -->
-                    <div class="skill-bar-item">
-                        <div class="skill-info">
-                            <span>Content Strategy</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="progress-track">
-                            <div class="progress-fill" style="--w: 75%"></div>
-                        </div>
+                    <!-- Column 3 -->
+                    <div class="expertise-column">
+                        <h4 class="expertise-title"><i class="fas fa-video"></i> Video Editing</h4>
+                        <ul class="expertise-list">
+                            <li>Reels, Shorts, TikTok editing</li>
+                            <li>Basic color correction</li>
+                            <li>Subtitle & caption adding</li>
+                        </ul>
                     </div>
 
                 </div>
