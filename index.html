@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Md Rifat Hossen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #6366f1; /* Indigo */
+            --sidebar-bg: #0f172a; /* Dark Slate */
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-page: #f1f5f9;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.5;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .cv-container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--white);
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* --- LEFT SIDEBAR --- */
+        .sidebar {
+            background-color: var(--sidebar-bg);
+            color: #cbd5e1;
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .profile-section {
+            text-align: center;
+        }
+
+        .profile-wrapper {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            padding: 4px;
+            background: #1e293b;
+            box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #1e293b;
+        }
+
+        .sidebar h2 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 2px;
+        }
+
+        .designation {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-title {
+            color: var(--white);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        /* Skills Sub-sections */
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-cat-title {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .skill-check-list {
+            list-style: none;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            padding-left: 5px;
+        }
+
+        .skill-check-list li {
+            margin-bottom: 4px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .skill-check-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            margin-right: 8px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .tools-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #cbd5e1;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        /* Education on Left */
+        .edu-item {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 15px;
+            border-left: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .edu-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .edu-degree {
+            color: var(--white);
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .edu-school {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+        
+        .edu-result {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+            margin-top: 2px;
+            display: block;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            padding-bottom: 4px;
+        }
+
+        /* --- RIGHT MAIN CONTENT --- */
+        .main-content {
+            padding: 50px;
+            background: var(--white);
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 20px;
+        }
+
+        .header-text h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .header-text p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .btn-download-sm {
+            background-color: var(--sidebar-bg);
+            color: var(--white);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s;
+            border: 1px solid var(--sidebar-bg);
+        }
+
+        .btn-download-sm:hover {
+            background-color: var(--white);
+            color: var(--sidebar-bg);
+            border-color: var(--sidebar-bg);
+            transform: translateY(-2px);
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--sidebar-bg);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .section-title i {
+            margin-right: 12px;
+            color: var(--primary-color);
+            background: #eff6ff;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .summary-text {
+            color: var(--text-light);
+            text-align: justify;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* Personal Details Grid on Right */
+        .personal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .detail-card {
+            background: #f8fafc;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .detail-card.full-width {
+            grid-column: span 2;
+        }
+
+        .detail-label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .detail-value {
+            font-size: 0.9rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        /* Experience Card */
+        .exp-card {
+            margin-bottom: 25px;
+            border-left: 3px solid #e2e8f0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .exp-card:hover {
+            border-left-color: var(--primary-color);
+        }
+
+        .exp-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .exp-company {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            background: #e0e7ff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 8px 0;
+        }
+
+        .exp-desc ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .exp-desc li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 6px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .exp-desc li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Passions List */
+        .passions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .passion-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .passion-item:hover {
+            background: #eff6ff;
+            transform: translateX(5px);
+        }
+        
+        .passion-item i {
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                padding: 30px 20px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            .top-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            .btn-download-sm {
+                width: 100%;
+                justify-content: center;
+            }
+            .personal-grid, .passions-grid {
+                grid-template-columns: 1fr;
+            }
+            .detail-card.full-width {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-wrapper">
+                    <img src="https://raw.githubusercontent.com/rifat2z/webimage/main/RifaRB.png" alt="Md Rifat Hossen" class="profile-img">
+                </div>
+                <h2>Md Rifat Hossen</h2>
+                <p class="designation">Content Creator</p>
+            </div>
+
+            <!-- Skills (Detailed) -->
+            <div>
+                <h3 class="sidebar-title">Skills</h3>
+                
+                <div class="skill-category">
+                    <div class="skill-cat-title">Photo Editing & Graphics</div>
+                    <ul class="skill-check-list">
+                        <li>Photo retouching and enhancement</li>
+                        <li>Social media poster design</li>
+                        <li>Thumbnail design</li>
+                        <li>Banner and promotional graphics</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-cat-title">Social Media</div>
+                    <ul class="skill-check-list">
+                        <li>Content planning and scheduling</li>
+                        <li>Facebook & Instagram management</li>
+                        <li>Basic social media marketing</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-cat-title">Video Editing</div>
+                    <ul class="skill-check-list">
+                        <li>Reels, Shorts, TikTok editing</li>
+                        <li>Color correction & transitions</li>
+                        <li>Subtitle and caption adding</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div>
+                <h3 class="sidebar-title">Tools</h3>
+                <div class="tools-tags">
+                    <span class="tag">Photoshop</span>
+                    <span class="tag">Illustrator</span>
+                    <span class="tag">Canva</span>
+                    <span class="tag">CapCut</span>
+                    <span class="tag">Filmora</span>
+                    <span class="tag">Git & GitHub</span>
+                    <span class="tag">MS Office</span>
+                </div>
+            </div>
+
+            <!-- Education (On Left) -->
+            <div>
+                <h3 class="sidebar-title">Education</h3>
+                <div class="edu-item">
+                    <span class="edu-degree">B.Sc. in CSE</span>
+                    <span class="edu-school">Pundra University</span>
+                    <span class="edu-result">CGPA 3.40 (2021-2025)</span>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-degree">HSC</span>
+                    <span class="edu-school">Police Lines School & College</span>
+                    <span class="edu-result">GPA 5.00 (2020)</span>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-degree">SSC</span>
+                    <span class="edu-school">TMSS Public School & College</span>
+                    <span class="edu-result">GPA 4.94 (2018)</span>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div>
+                <h3 class="sidebar-title">Languages</h3>
+                <div class="lang-item">
+                    <span>English</span>
+                    <span>Fluent</span>
+                </div>
+                <div class="lang-item">
+                    <span>Bangla</span>
+                    <span>Native</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- RIGHT MAIN CONTENT -->
+        <main class="main-content">
+            
+            <div class="top-header">
+                <div class="header-text">
+                    <h1>Md Rifat Hossen</h1>
+                    <p>Creative Content Creator & Graphics Professional</p>
+                </div>
+                <!-- Download Button (Right Side, Small) -->
+                <a href="https://drive.google.com/uc?export=download&id=1HOpNZxdioIYvGW0-8tFOS_hPRis8nosV" class="btn-download-sm" target="_blank">
+                    <i class="fas fa-download"></i> Download Resume
+                </a>
+            </div>
+
+            <!-- Profile Summary -->
+            <section class="section">
+                <h3 class="section-title"><i class="fas fa-user-pen"></i> Profile Summary</h3>
+                <p class="summary-text">
+                    Creative and detail-oriented content creator with over 6 years of experience working as a Computer Operator and Graphics Assistant. Skilled in photo editing, basic graphic design, and video editing, with a strong understanding of social media content creation. Passionate about creating engaging digital content and helping businesses grow their online presence through creative visuals and effective content strategies.
+                </p>
+            </section>
+
+            <!-- Personal Details (Moved to Right) -->
+            <section class="section">
+                <h3 class="section-title"><i class="fas fa-id-card"></i> Personal Details</h3>
+                <div class="personal-grid">
+                    <div class="detail-card full-width">
+                        <span class="detail-label">Present Address</span>
+                        <div class="detail-value">Vill: Zora Zaider Para, PO: Ranirhat-5800, PS: Shajahanpur, Dist: Bogura</div>
+                    </div>
+                    <div class="detail-card full-width">
+                        <span class="detail-label">Permanent Address</span>
+                        <div class="detail-value">Vill: Zora Zaider Para, PO: Ranirhat-5800, PS: Shajahanpur, Dist: Bogura</div>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">Date of Birth</span>
+                        <div class="detail-value">17th January, 2002</div>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">Blood Group</span>
+                        <div class="detail-value">B+</div>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">Height</span>
+                        <div class="detail-value">5 Feet 9 Inch</div>
+                    </div>
+                    <div class="detail-card">
+                        <span class="detail-label">Religion</span>
+                        <div class="detail-value">Islam</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="section">
+                <h3 class="section-title"><i class="fas fa-briefcase"></i> Experience</h3>
+                
+                <div class="exp-card">
+                    <div class="exp-title">Computer Operator & Graphics Assistant</div>
+                    <div class="exp-company">Local Computer Shop</div>
+                    <div class="exp-date">Duration: 6+ Years</div>
+                    <div class="exp-desc">
+                        <ul>
+                            <li>Photo editing and retouching for customers.</li>
+                            <li>Designing simple graphics and print materials.</li>
+                            <li>Computer typing and document processing.</li>
+                            <li>Assisting customers with printing, scanning, and digital services.</li>
+                            <li>Basic video editing and content preparation when needed.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Passions -->
+            <section class="section">
+                <h3 class="section-title"><i class="fas fa-heart"></i> Passions</h3>
+                <div class="passions-grid">
+                    <div class="passion-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Creating creative digital content</span>
+                    </div>
+                    <div class="passion-item">
+                        <i class="fas fa-video"></i>
+                        <span>Video editing and storytelling</span>
+                    </div>
+                    <div class="passion-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Learning new digital tools</span>
+                    </div>
+                    <div class="passion-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Helping brands grow online</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
